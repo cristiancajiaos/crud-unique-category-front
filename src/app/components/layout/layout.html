@@ -6,4 +6,11 @@
 
 <mat-divider></mat-divider>
 
-<p>Tabla</p>
+<ng-container *ngIf="loadingCategories">
+  <p>Loading categories...</p>
+</ng-container>
+<ng-container *ngIf="!loadingCategories">
+  <p>Tabla</p>
+
+  <p>categories: {{categories | json}}</p>
+</ng-container>
